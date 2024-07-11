@@ -21,7 +21,7 @@ if __name__ == "__main__":
     processed_data.to_csv(filepath + ".csv", index=False)
     processed_data.to_json(filepath + ".json", orient='records', lines=True)
 
-    print(processed_data.head())
+    print(processed_data.tail())
     print()
     print("__________Complete to embedd features into Docker__________")
     print()

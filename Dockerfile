@@ -12,11 +12,13 @@ COPY . /app
 # (You can remove this if your Python script doesn't have dependencies) 
 RUN pip install --no-cache-dir -r requirements.txt 
 
-# Make port 80 available to the world outside this container 
-EXPOSE 4000:4000 
- 
+# Make port 4000 available to the world outside this container 
+EXPOSE 4000:4000
+#docker build -t image_name .
+#docker run -p 4000:4000 image_name
+
 # Define environment variable 
-#ENV NAME Youtube_scrape_text
+ENV NAME Youtube_scrape_text
  
 # Run app.py when the container launches 
 CMD ["python", "app.py"] 
