@@ -22,3 +22,6 @@ if __name__ == "__main__":
     processed_data.to_json(filepath + ".json", orient='records', lines=True)
 
     print(processed_data.head())
+    print()
+    print("__________Complete to embedd features into Docker__________")
+    print()
