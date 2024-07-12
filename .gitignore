@@ -1,3 +1,6 @@
 .env
-guidline.ipynb
+*/__pycache__
+git_guidline.py
+docker_guidline.py
 notebook/
+Youtube_data/
