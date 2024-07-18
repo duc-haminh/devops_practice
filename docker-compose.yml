@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  flask_app:
+    build: .
+    ports:
+      - "5000:5000"
+    environment:
+      - TRAIN_PATH=/app/Data/ML_basic/train.csv
+      - TEST_PATH=/app/Data/ML_basic/test.csv
+      - OUTPUT_PATH=/app/images
+    volumes:
+      - .:/app

@@ -1,15 +1,6 @@
-from pytube import YouTube
-import pysrt
-from youtube_transcript_api import YouTubeTranscriptApi
-import googleapiclient.discovery
-from googleapiclient.discovery import build
-from pytube import YouTube
-from pydub import AudioSegment
-from IPython.display import Audio
-import csv
-import os
-import re
-import glob
-import pandas as pd
-import shutil
-from unidecode import unidecode
+numpy
+pandas
+matplotlib
+seaborn
+flask
+gunicorn

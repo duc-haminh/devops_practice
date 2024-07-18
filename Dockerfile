@@ -1,32 +1,34 @@
-# Use an official Python runtime as a parent image 
+# Use an official Python runtime as a parent image
 FROM python:3.12.4
-RUN pip install --upgrade pip
- 
-# Set the working directory in the container 
-WORKDIR /app 
- 
-# Copy the current directory contents into the container at /app 
-COPY . /app 
+
+# Set the working directory in the container
+WORKDIR /app
+
+# Copy the current directory contents into the container at /app
+COPY . /app
+
+# Create a directory for data files and copy them
+RUN mkdir -p /app/Data/ML_basic
+COPY /Data/ML_basic/train.csv /app/Data/ML_basic/train.csv
+COPY /Data/ML_basic/test.csv /app/Data/ML_basic/test.csv
+
 
 # Define environment variables for file paths
-ENV TRAIN_PATH="/Users/hmd/hmd_project/git-python/Data/ML_basic/train.csv"
-ENV TEST_PATH="/Users/hmd/hmd_project/git-python/Data/ML_basic/test.csv"
+ENV TRAIN_PATH="/app/Data/ML_basic/train.csv"
+ENV TEST_PATH="/app/Data/ML_basic/test.csv"
 ENV OUTPUT_PATH="/app/images"
 
 # Create directory for output images
 RUN mkdir -p $OUTPUT_PATH
- 
-# Install any needed packages specified in requirements.txt 
-# (You can remove this if your Python script doesn't have dependencies) 
-RUN pip install --no-cache-dir -r requirements.txt 
 
-# Make port 4000 available to the world outside this container 
-EXPOSE 4000:4000
-#docker build -t image_name .
-#docker run -p 4000:4000 image_name
+# Install any needed packages specified in requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt
 
-# Define environment variable 
-ENV NAME basic_ml
- 
-# Run app.py when the container launches 
-CMD ["python", "app.py"] 
+# Expose port 5000
+EXPOSE 5000
+
+# Run app.py when the container launches
+#CMD ["python", "app.py"]"""
+
+ENV FLASK_APP=app.py
+CMD ["flask", "run", "--host", "0.0.0.0"]
