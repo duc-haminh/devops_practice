@@ -5,6 +5,11 @@ from flask import Flask, render_template, send_from_directory
 
 app = Flask(__name__)
 
+# Set environment variables
+os.environ['TRAIN_PATH'] = '/Users/hmd/hmd_project/devops_practice/Data/ML_basic/train.csv'
+os.environ['TEST_PATH'] = '/Users/hmd/hmd_project/devops_practice/Data/ML_basic/test.csv'
+os.environ['OUTPUT_PATH'] = '/Users/hmd/hmd_project/git-python/images'
+
 # Using environment variables for file paths (set in Dockerfile or local environment)
 train_path = os.environ.get('TRAIN_PATH')
 test_path = os.environ.get('TEST_PATH')
