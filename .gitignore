@@ -1,6 +1,4 @@
 .env
 */__pycache__
-git_guidline.py
-docker_guidline.py
-notebook/
-Youtube_data/
+__pycache__/
+Notebook/
