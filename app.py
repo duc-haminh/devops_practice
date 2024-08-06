@@ -12,11 +12,10 @@ if __name__ == "__main__":
 
     processed_data = process_data(data)
 
-    path = "/Users/hmd/hmd_project/Youtube_data/"
+    path = os.path.expanduser("~/hmd_project/devops_practice/Youtube_data/")
     filename = "data_thuduchospital"
-    filepath = path + filename
-    directory = os.path.dirname(filepath)
-    os.makedirs(directory, exist_ok=True)
+    filepath = os.path.join(path, filename)
+    os.makedirs(path, exist_ok=True)
 
     processed_data.to_csv(filepath + ".csv", index=False)
     processed_data.to_json(filepath + ".json", orient='records', lines=True)
