@@ -3,3 +3,4 @@
 __pycache__/
 notebook/
 images/
+*/__pycache__/
